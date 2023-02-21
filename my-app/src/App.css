@@ -1,0 +1,38 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  
+}
+
+.button-guess {
+  width: 330px;
+  height: 200px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.column{
+  margin-top: 300px;
+}
+
+button {
+  padding: 4px;
+  font-size: 18px;
+  margin-top: 400px;
+  margin-bottom: 20px;
+}
+
+button + button {
+  margin-left: 20px;
+}
+
+.wrong {
+  color: red;
+  font-size: 24px;
+  text-align: center;
+}
