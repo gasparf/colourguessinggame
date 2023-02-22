@@ -26,19 +26,17 @@ function App() {
     
   };
 
-
-
-  // useEffect(() => {
-  //   // to dynamically change the colour of the guess button
-  //     const chosenColour = getRandomColour();
-  //     setColour(chosenColour);
-  //     // we use sort and the math function as a little hack to arrange the coloured buttons 
-  //     setSelect([chosenColour, getRandomColour(), getRandomColour()].sort(() => 0.5 - Math.random()));
-  //   }, []); 
-
   useEffect(() => {
     pickColour();
   }, []);
+
+  // for stylistic purposes, we want to pick a complementary colour of the random colour picked
+  // by definition a complementary colour
+  const backgroundColour = () => {
+    const target = pickColour();
+    
+  }
+
 
   function pickinputted(answer: string){
     if (answer === colour) {
@@ -60,7 +58,7 @@ function App() {
 
         </div>
 
-        {wrongSelect && <div className="wrong"> Wrong Answer </div>}
+        {wrongSelect && <div className="wrong"> Wrong Answer, Try Again! </div>}
         
       </div>
   </div> 
