@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import './App.css';
 import React from "react";
+import Slider from '@mui/material/Slider';
+
 
 function App() {
 
   const [colour, setColour] = useState("");
   const [select, setSelect] = useState<string[]>([]);
-  const [wrongSelect, setwrongSelect] = useState(false);
+  const [wrongSelect, setwrongSelect] = useState(false); 
+  const [dark, setDark] = useState("");
+
+  // const [wrnogSelect, setwrongSelect] = <boolean | undefined>(false);
+
+
 
 
   const pickColour = () => {
@@ -32,10 +39,7 @@ function App() {
 
   // for stylistic purposes, we want to pick a complementary colour of the random colour picked
   // by definition a complementary colour
-  const backgroundColour = () => {
-    const target = pickColour();
-    
-  }
+  
 
 
   function pickinputted(answer: string){
@@ -48,12 +52,19 @@ function App() {
   }
 
   return (
-    <div className="App"> 
-    
+    <div className="App" data-theme="dark"> 
+
+
+
       <div className="column">
-
+        <div className="dmode_container">
+        <span> Change Theme </span>  
+        <label className="toggle"> 
+          <Slider> </Slider>
+        </label>
+        </div>
         <div className="button-guess" style={{background : colour}}>
-
+     
           {select.map(pick => (<button onClick={() => pickinputted(pick)} key={pick}>{pick}</button>))}
 
         </div>
