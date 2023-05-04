@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import './App.css';
 import React from "react";
 import Slider from '@mui/material/Slider';
+import { dark } from "@mui/material/styles/createPalette";
 
 
 
@@ -43,7 +44,9 @@ function App() {
 
   useEffect(() => {
     pickColour();
+    changeTheme();
   }, []);
+
 
 
   function pickinputted(answer: string){
@@ -60,8 +63,8 @@ function App() {
 
       <button className="themeToggle" onClick={changeTheme}> Change Theme </button>
 
-      <div className="column">
 
+      <div className="column">
 
         <div className="button-guess" style={{background : colour}}>
 
